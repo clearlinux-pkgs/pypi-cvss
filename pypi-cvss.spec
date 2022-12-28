@@ -4,7 +4,7 @@
 #
 Name     : pypi-cvss
 Version  : 2.5
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/79/8b/52037d3acb71591bd683173b94cf1efab197997505e3c75edc2012859757/cvss-2.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/79/8b/52037d3acb71591bd683173b94cf1efab197997505e3c75edc2012859757/cvss-2.5.tar.gz
 Summary  : CVSS2/3 library with interactive calculator for Python 2 and Python 3
@@ -15,6 +15,9 @@ Requires: pypi-cvss-license = %{version}-%{release}
 Requires: pypi-cvss-python = %{version}-%{release}
 Requires: pypi-cvss-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 CVSS
@@ -70,15 +73,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1671551611
+export SOURCE_DATE_EPOCH=1672266296
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
