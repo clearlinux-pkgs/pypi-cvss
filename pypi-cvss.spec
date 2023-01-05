@@ -4,7 +4,7 @@
 #
 Name     : pypi-cvss
 Version  : 2.5
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/79/8b/52037d3acb71591bd683173b94cf1efab197997505e3c75edc2012859757/cvss-2.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/79/8b/52037d3acb71591bd683173b94cf1efab197997505e3c75edc2012859757/cvss-2.5.tar.gz
 Summary  : CVSS2/3 library with interactive calculator for Python 2 and Python 3
