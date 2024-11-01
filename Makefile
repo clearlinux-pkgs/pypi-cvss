@@ -1,5 +1,5 @@
 PKG_NAME := pypi-cvss
-URL = https://files.pythonhosted.org/packages/13/32/5801ac139ab2cca3acc3000aa6deadf55d1c54f1400cad40cd6476b3deef/cvss-3.2.tar.gz
+URL = https://files.pythonhosted.org/packages/b8/f3/8893d8c4ea780e51eb22bc94a5959a2836d7eb74fe7c24b98bd1b2c74d9c/cvss-3.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
